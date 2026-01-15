@@ -1,0 +1,4 @@
+name: StormCreativeBypass
+version: '${version}'
+main: ru.kotikstasika.stormcreativebypass.StormCreativeBypass
+api-version: '1.16'
