@@ -37,7 +37,6 @@ public class Listener extends AbsListener {
                         lore.add(ChatColor.translateAlternateColorCodes('&', "&f &b&l— &fДанный &6предмет &fвзят из гм"));
                         lore.add(ChatColor.translateAlternateColorCodes('&', "&f &b&l— &fВладелец данного предмета &6" + player.getName()));
                         lore.add(ChatColor.translateAlternateColorCodes('&', "&7"));
-                        lore.add(ChatColor.translateAlternateColorCodes('&', "&7Плагин разработан с любовью by kotikstasika "));
 
                         meta.setLore(lore);
                         item.setItemMeta(meta);
