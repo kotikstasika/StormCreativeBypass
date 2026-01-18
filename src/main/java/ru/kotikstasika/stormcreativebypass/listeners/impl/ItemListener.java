@@ -98,28 +98,6 @@ public class ItemListener extends AbstractListener {
         Player player = (Player) event.getEntity();
         ItemStack item = event.getItem().getItemStack();
 
-        if (itemManager.hasCreativeLore(item)) {
-            String originalOwner = itemManager.getOriginalOwnerFromLore(item);
-            boolean isPlayerCreative = player.getGameMode() == GameMode.CREATIVE;
-            boolean isOwnerCreative = false;
-            
-            if (originalOwner != null && !originalOwner.equals("Неизвестно")) {
-                Player ownerPlayer = player.getServer().getPlayer(originalOwner);
-                if (ownerPlayer != null) {
-                    isOwnerCreative = ownerPlayer.getGameMode() == GameMode.CREATIVE;
-                }
-            }
-            
-            if (isPlayerCreative && !originalOwner.equals(player.getName()) && 
-                !permissionManager.hasRemoveBypassPermission(player) && !isOwnerCreative) {
-                event.setCancelled(true);
-                event.getItem().remove();
-                player.sendMessage(ChatColor.RED + "Чужой креативный предмет удален!");
-                auditService.logAction(player, "FOREIGN_ITEM_REMOVED", "Удален чужой креативный предмет при подборе: " +
-                        item.getType() + " (x" + item.getAmount() + ") от " + originalOwner, "item-pickup");
-                return;
-            }
-        }
 
         if (player.getGameMode() == GameMode.CREATIVE && itemManager.hasCreativeLore(item)) {
             String originalOwner = itemManager.getOriginalOwnerFromLore(item);

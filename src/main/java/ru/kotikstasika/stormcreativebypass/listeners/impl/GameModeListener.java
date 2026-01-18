@@ -40,10 +40,6 @@ public class GameModeListener extends AbstractListener {
         if (event.getNewGameMode() == GameMode.CREATIVE) {
             inventories.put(playerId, player.getInventory().getContents());
 
-            if (!permissionManager.hasRemoveBypassPermission(player)) {
-                itemManager.removeForeignCreativeItems(player, player.getInventory());
-            }
-
             if (isMonitoredPlayer(player)) {
                 auditService.logAction(player, "GAMEMODE_CHANGE", "Вошел в КРЕАТИВНЫЙ режим", "game-mode");
             }
