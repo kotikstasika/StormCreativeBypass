@@ -1,0 +1,58 @@
+item-added-lore:
+  - "&7"
+  - "&7Описание:"
+  - "&f &b&l— &fДанный &6предмет &fвзят из гм"
+  - "&f &b&l— &fВладелец данного предмета &6{player}"
+  - "&7"
+
+placeholders:
+  creative: "{creative}"
+  player: "{player}"
+
+permissions:
+  admin: "StormCreativeBypass.admin"
+  bypass: "stormcreativebypass.bypass"
+  remove-bypass: "stormcreativebypass.remove.bypass"
+  command-bypass: "stormcreativebypass.command.bypass"
+  creative-item-command-bypass: "stormcreativebypass.creativeitem.command.bypass"
+
+audit:
+  enabled: true
+  console:
+    enabled: true
+  telegram:
+    enabled: false
+    bot-token: ""
+    chat-id: ""
+  nearby-players:
+    enabled: false
+    radius: 10.0
+  remove-creative-items-on-death: false
+  profiles:
+    default:
+      players:
+        - "Player1"
+        - "Player2"
+      log-types:
+        game-mode: true
+        item-take: true
+        item-drop: true
+        block-place: true
+        item-pickup: true
+        container-items: true
+        interact: true
+      remove-creative-items-on-death: false
+
+blocking-commands:
+  - "/spawn"
+  - "/home"
+  - "/warp"
+
+blocking-message: "&cВы не можете использовать эту команду, пока находитесь в креативе!"
+
+creative-item-blocking-commands:
+  - "/trade"
+  - "/shop"
+
+creative-item-blocking-message: "&cВы не можете использовать эту команду, пока в вашем инвентаре есть креативные предметы!"
+
